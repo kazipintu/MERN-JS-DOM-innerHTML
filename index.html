@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM innerHTML</title>
+</head>
+
+<body>
+  <section id="container">
+
+    <button id="add"> Add Text </button> <br> <br>
+    <button id="new-btn"> Add Details </button>
+
+  </section>
+
+  <!-- back-tick : template string ` ` -->
+  <script>
+    {
+      document.getElementById('add').addEventListener('click', function () {
+        const newContainer = document.getElementById('container')
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML = `
+        <h3> This is a new header tag </h3>
+        <p> This is a new paragraph tag </p>
+
+      `
+        newContainer.appendChild(newDiv);
+
+      })
+
+    }
+
+    {
+      document.getElementById('new-btn').addEventListener('click', function () {
+
+        const newContainer = document.getElementById('container');
+        const newDiv2 = document.createElement('div');
+        newDiv2.innerHTML = `
+          <h2> This is a new test heading </h2>
+          <p> This is a new test paragraph </p>
+        `
+        newContainer.appendChild(newDiv2);
+
+      })
+    }
+  </script>
+</body>
+
+</html>
